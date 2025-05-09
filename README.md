@@ -52,12 +52,13 @@ This module uses a Tree-LSTM to learn query-plan structures.
 ## Usage
 
 ### Data
-
+- For running nLDE, we need Knowledge Graph in the .hdt format. 
 - For running learned models, we except you to have a Knowledge Graph in the .ttl or .nt format, as well as
 it served over a SPARQL endpoint. 
 - Place these files under `Datasets/{dataset_name}/graph/` after downloading.
-  - 🔗 [YAGO (.nt)](https://nx36303.your-storageshare.de/s/wMbJJ2JLnkXcSE6?path=%2Fyago%2Fgraph)
-  - 🔗 [LUBM (.nt)](https://nx36303.your-storageshare.de/s/wMbJJ2JLnkXcSE6/download?path=%2Flubm%2Fgraph&files=lubm.nt)
+    - 🔗 [LUBM](https://tio.lv.tab.digital/s/xfrPgwEc6SxfXXg)
+    - 🔗 [YAGO](https://tio.lv.tab.digital/s/DqTmrmm6EoJMMqd)
+  
 
 ### Best Polices Generation
 
@@ -78,8 +79,8 @@ Here, "x" is the list of entities that are part of the query, "y" is one-hot vec
 
 Note: This structure is adapted from the data input structure used in the [GNCE project](https://github.com/DE-TUM/GNCE/tree/master). 
 These large files are used by the GNN model and are hosted externally, place these files under `Datasets/{dataset_name}/star/` after downloading.:
-- 🔗 [LUBM Joined_Queries.json](https://tio.lv.tab.digital/s/9KkKoGC8jxbMFyn)
-- 🔗 [YAGO Joined_Queries.json](https://tio.lv.tab.digital/s/WMkWB27ow6o7wX6)
+- 🔗 [LUBM Joined_Queries.json](https://tio.lv.tab.digital/s/zN9iCRAmfm5nDp5)
+- 🔗 [YAGO Joined_Queries.json](https://tio.lv.tab.digital/s/RZL97mNRWR3Ks4Q)
 
 #### Tree_LSTM
 For the Tree-LSTM model, a JSON file is expected containing performance statistics for each query under different routing policies:
