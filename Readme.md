@@ -61,8 +61,8 @@ it served over a SPARQL endpoint.
 
 ### Best Polices Generation
 
-All queries are first executed using all available routing policies, and for each execution, the following statistics are recorded: execution time, number of results, number of requests, and number of intermediate results. 
-Based on these metrics, the optimal routing strategies are selected using the script select_best_policies.py.
+All queries are first executed by nLDE using all available routing policies, and for each execution, the following statistics are recorded: execution time, number of results, number of requests, and number of intermediate results. 
+Based on these metrics, the optimal routing strategies are selected using the script `select_best_policies.py`.
 
 #### GNN
 For the GNN-based model, we further expect you to have a file containing the queries you want to predict in
