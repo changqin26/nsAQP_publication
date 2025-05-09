@@ -118,7 +118,7 @@ The first step for both `GNN` and `Tree_LSTM` is to generate embeddings for the 
 This project reuses and adapts the embedding generation procedure from the [GNCE project](https://github.com/DE-TUM/GNCE).  
 The script `embeddings_generator.py` performs this task.
 
-#### 🔧 Configuration
+#### Configuration
 
 In the main function of `embeddings_generator.py`, set the following variables:
 
@@ -127,7 +127,7 @@ In the main function of `embeddings_generator.py`, set the following variables:
 - `KG_ENDPOINT`: The SPARQL endpoint of the Knowledge Graph
 - `KG_NAME`: A short identifier for your dataset
 
-#### 📦 Output
+#### Output
 
 The generated embeddings are saved under:
 
