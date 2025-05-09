@@ -1,0 +1,22 @@
+[
+    "Epoch: 1 Loss: 0.4089 Time(ms): 2112678",
+    "Epoch: 2 Loss: 0.4055 Time(ms): 2656043",
+    "Epoch: 3 Loss: 0.4058 Time(ms): 3332532",
+    "Epoch: 4 Loss: 0.4054 Time(ms): 3821002",
+    "Epoch: 5 Loss: 0.4052 Time(ms): 4454050",
+    "Epoch: 6 Loss: 0.4050 Time(ms): 5282177",
+    "Epoch: 7 Loss: 0.4053 Time(ms): 6106276",
+    "Epoch: 8 Loss: 0.4045 Time(ms): 6945469",
+    "Epoch: 9 Loss: 0.4041 Time(ms): 7870588",
+    "Epoch: 10 Loss: 0.4042 Time(ms): 8771017",
+    "Epoch: 11 Loss: 0.4041 Time(ms): 9516086",
+    "Epoch: 12 Loss: 0.4043 Time(ms): 10443100",
+    "Epoch: 13 Loss: 0.4042 Time(ms): 11333298",
+    "Epoch: 14 Loss: 0.4037 Time(ms): 12166159",
+    "Epoch: 15 Loss: 0.4038 Time(ms): 13126240",
+    "Epoch: 16 Loss: 0.4038 Time(ms): 13947293",
+    "Epoch: 17 Loss: 0.4039 Time(ms): 14758927",
+    "Epoch: 18 Loss: 0.4037 Time(ms): 15503820",
+    "Epoch: 19 Loss: 0.4035 Time(ms): 16521098",
+    "Epoch: 20 Loss: 0.4036 Time(ms): 17339578"
+]

@@ -1,0 +1,1 @@
+SELECT * WHERE {  ?s <http://example.com/13000080> <http://example.com/10677288> .  ?s <http://example.com/13000080> <http://example.com/12396370> .  ?s <http://example.com/13000179> <http://example.com/12935633> .  ?s <http://example.com/13000179> <http://example.com/12940692> .  ?s ?p4 ?o4 . ?s <http://example.com/13000179> ?o5 . }
