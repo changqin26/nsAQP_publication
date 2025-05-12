@@ -1,1 +1,0 @@
-SELECT * WHERE {  ?s <http://example.org/8> <http://example.org/141194> .  ?s <http://example.org/5> <http://example.org/6> .  ?s <http://example.org/6> <http://example.org/88839> .  ?s <http://example.org/4> ?o3 .  ?s ?p4 ?o4 . ?s <http://example.org/7> ?o5 . }

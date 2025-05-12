@@ -1,6 +1,0 @@
-{
-    "test_loss": 0.6231,
-    "precision_all_zero": 0.5144
-    "precision_non_all_zero": 0.9542,
-    "num_all_zero_predictions": 9962
-}

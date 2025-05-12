@@ -53,12 +53,10 @@ This module uses a Tree-LSTM to learn query-plan structures.
 
 ### Data
 - For running nLDE, we need Knowledge Graph in the .hdt format. 
-- For running learned models, we except you to have a Knowledge Graph in the .ttl or .nt format, as well as
-it served over a SPARQL endpoint. 
-- Place these files under `Datasets/{dataset_name}/graph/` after downloading.
-    - 🔗 [LUBM](https://tio.lv.tab.digital/s/xfrPgwEc6SxfXXg)
-    - 🔗 [YAGO](https://tio.lv.tab.digital/s/DqTmrmm6EoJMMqd)
+- For running learned models, we except you to have a Knowledge Graph in the .ttl or .nt format, as well as it served over a SPARQL endpoint.
   
+#### Example Data
+The used datasets, queries, query plans, optimal policy assignment and results from the paper can be found under the folder [Datasets/lubm](https://tio.lv.tab.digital/s/9KkKoGC8jxbMFyn) and [Datasets/yago](https://tio.lv.tab.digital/s/WMkWB27ow6o7wX6).
 
 ### Best Polices Generation
 
@@ -74,13 +72,11 @@ the following format:
 "triples": [["http://example.org/entity1", "http://example.org/predicate1", "http://example.org/entity2"], ...]}
 ```
 
-Here, "x" is the list of entities that are part of the query, "y" is one-hot vector indicating the optimal routing policy (multi-label format),
+Here, "x" is the list of entities that are part of the query, "y" is a multi-label one-hot vector indicating the optimal routing policies selected for the query,
 "query" is the SPARQL query, and "triples" is the list of triples that are part of the query.
 
-Note: This structure is adapted from the data input structure used in the [GNCE project](https://github.com/DE-TUM/GNCE/tree/master). 
-These large files are used by the GNN model and are hosted externally, place these files under `Datasets/{dataset_name}/star/` after downloading.:
-- 🔗 [LUBM Joined_Queries.json](https://tio.lv.tab.digital/s/zN9iCRAmfm5nDp5)
-- 🔗 [YAGO Joined_Queries.json](https://tio.lv.tab.digital/s/RZL97mNRWR3Ks4Q)
+Note: This structure is adapted from the data input structure used in the [GNCE project](https://github.com/DE-TUM/GNCE/tree/master). These files are under `Datasets/{dataset_name}/star/` with the name `Joined_Queries.json`.
+
 
 #### Tree_LSTM
 For the Tree-LSTM model, a JSON file is expected containing performance statistics for each query under different routing policies:
@@ -104,12 +100,9 @@ For the Tree-LSTM model, a JSON file is expected containing performance statisti
 ```
 Here, each key is a query ID (e.g., "Q18109"), and its value is a dictionary of routing strategies evaluated for that query.
 Each strategy reports: ExecutionTime(runtime in seconds), Results(number of query answers), Requests(number of total requests) and InterRe
-(intermediate results).
+(intermediate results). Based on these metrics, the optimal routing strategy per query is selected and stored in a `best_policies.json` file under `Datasets/{dataset_name}/star/`.
 
-This file is used to determine the optimal policy per query, which becomes the label for Tree-LSTM training.
-
-#### Example Data
-The used datasets, queries(query plans) and results from the paper can boe found under the folder Datasets/lubm and Datasets/yago.
+This file provides the optimal routing strategy per query and serves as the supervised target for Tree-LSTM training.
 
 ### Embedding Generation
 
@@ -137,7 +130,7 @@ The generated embeddings are saved under:
         /graph
             graph.nt
         /Results
-        /query_type
+        /queries
             query_file.json
         /statistics
             /entity1.json
@@ -157,11 +150,11 @@ Each entity file in the `statistics/` folder contains:
 
 GNN and Tree_LSTM models are trained under the same conditions: 
 - `policy_prediction.py`: for standard evaluation, where all entities are **seen** during training.
-  - For Tree_LSTM, the input are query plans and the mapping between plans and labels are stored in Datasets/KG_NAME/star/best_queries.json
-  - For GNN, the input are queries and the mapping is extracted from Datasets/KG_NAME/star/Joined_Queries.json
+  - For Tree_LSTM, query plans are used as input, and routing strategies are loaded from `best_policies.json`
+  - For GNN, queries and corresponding policy targets are loaded from `Joined_Queries.json`
 - `policy_prediction_inductive.py`: for inductive evaluation, where entities in the test set are **unseen** during training.
-  - For Tree_LSTM, the queries are located in: Datasets/KG_NAME/TreeLSTMInductive/Train/ and .../Test/
-  - For GNN, the query files are: Datasets/KG_NAME/star/disjoint_train.json and disjoint_test.json
+  - For Tree_LSTM, the queries are located in `TreeLSTMInductive/Train/` and `.../Test/`
+  - For GNN, the query files are `disjoint_train.json` and `disjoint_test.json`
 
 They are trained on 80% of the queries and evaluated on the rest.
 
