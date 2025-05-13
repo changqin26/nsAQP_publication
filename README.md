@@ -10,7 +10,6 @@ and Multi-Layer Perceptron.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Comparing to related Approaches](#comparing-to-related-approaches)
 - [License](#license)
 
 ## Installation
