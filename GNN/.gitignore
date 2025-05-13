@@ -1,0 +1,11 @@
+**/.ipynb_checkpoints/*
+
+# IDE metadata
+.idea/
+
+# Byte-code / cache
+__pycache__/
+*.py[cod]
+
+# OS junk
+.DS_Store

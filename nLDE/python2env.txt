@@ -1,0 +1,10 @@
+#To install py2 in max2, use the following command to fetch the right channel.
+conda create -c 'https://repo.continuum.io/pkgs/free/osx-64' -n py2 python=2.7
+#Run py2
+conda activate py2
+#Stop py2
+conda deactivate
+#Build project
+python setup.py install
+#Run one query
+python nlde.py -s endpoint -f query -r n -t 180
