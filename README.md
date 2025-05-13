@@ -55,7 +55,7 @@ This module uses a Tree-LSTM to learn query-plan structures.
 - For running learned models, we except you to have a Knowledge Graph in the .ttl or .nt format, as well as it served over a SPARQL endpoint.
   
 #### Example Data
-The used datasets, queries, query plans, optimal policy assignment and results from the paper can be found under the folder [Datasets/lubm](https://tio.lv.tab.digital/s/9KkKoGC8jxbMFyn) and [Datasets/yago](https://tio.lv.tab.digital/s/WMkWB27ow6o7wX6).
+The used datasets, queries, query plans, optimal policy assignment and results from the paper can be found under the folder [Datasets/lubm](https://tio.lv.tab.digital/s/QyY6bT7WwmFFxkG) and [Datasets/yago](https://tio.lv.tab.digital/s/G23BnYmt7Q2yeTD).
 
 ### Best Polices Generation
 
