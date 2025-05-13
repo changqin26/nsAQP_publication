@@ -147,7 +147,7 @@ Each entity file in the `statistics/` folder contains:
 
 ### Training
 
-GNN and Tree_LSTM models are trained under the same conditions: 
+GNN and Tree_LSTM models use training scripts with the same filenames located in their respective folders: 
 - `policy_prediction.py`: for standard evaluation, where all entities are **seen** during training.
   - For Tree_LSTM, query plans are used as input, and routing strategies are loaded from `best_policies.json`
   - For GNN, queries and corresponding policy targets are loaded from `Joined_Queries.json`
@@ -161,14 +161,14 @@ The best model checkpoint is saved as:
 - ```Datasets/KG_NAME/Results/Model_NAME/Timestamp``` for standard evaluation.
 - ```Datasets/KG_NAME/Results/Model_NAME/Inductive/Timestamp``` for inductive evaluation.
 
-Each results folder contains:
+Each `Results` folder contains:
 - `model.pth`: the trained model weights
 - `optimizer.pth`: the optimizer state
 - `runtime_training.json`: time spent per epoch 
 - `runtime_evaluation.json`: time spent during inference per epoch
 - `thresholds_kde.json`: class-wise thresholds computed using KDE
 - `tp_fp_probabilities.json`: TP/FP prediction distributions
-
+-  `test_metrics.json`:  test set performance metrics, including loss, precision for non-all-zero prediction, precision for all-zero prediction and its count.
 
 
 
