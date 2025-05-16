@@ -75,8 +75,8 @@ class Word2Vec(Embedder):
 
         """
         #corpus = [walk for entity_walks in walks for walk in entity_walks]
-        corpus = MyWalks("/Users/changqin/Documents/PhD/Datasets/lubmOriginal/Datasets/walks")
-
+        corpus = MyWalks("PATH_TO_WALKS")
+        
         print("Building Vocabulary...")
         self._model.build_vocab(corpus, update=is_update)
         print("Training Model...")
