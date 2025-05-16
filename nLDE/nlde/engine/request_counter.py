@@ -1,7 +1,6 @@
 """
 Created on Mar 15, 2023
 
-@author: Chang Qin
 """
 
 class RequestCounter:

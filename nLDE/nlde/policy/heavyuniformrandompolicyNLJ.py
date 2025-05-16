@@ -1,7 +1,7 @@
 """
 Created on Nov 24, 2011
 
-@author: Chang Qin, Maribel Acosta
+@author: Maribel Acosta
 """
 from multiprocessing import Manager
 import random
